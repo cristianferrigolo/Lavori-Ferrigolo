@@ -1,2 +1,0 @@
-# Lavori-Ferrigolo
-Qui ci saranno i lavori di Christian Ferrigolo
