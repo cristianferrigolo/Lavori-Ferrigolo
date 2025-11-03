@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagrafica Utente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        /* Titolo di sezione più grande */
+        .form-group > label:first-child {
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        /* Input, select e textarea */
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Radio e checkbox */
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-left: 10px;
+            accent-color: #007bff;
+        }
+
+        /* Sezione Sesso e simili */
+        .options-group {
+            margin-top: 8px;
+        }
+
+        .options-group label {
+            font-size: 0.95rem;
+            color: #333;
+                    }
+
+        /* Checkbox: testo a sinistra, quadratino a destra */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 6px 10px;
+            background-color: #fafafa;
+            transition: background-color 0.2s ease;
+        }
+
+        .checkbox-item:hover {
+            background-color: #eef6ff;
+        }
+
+        .checkbox-item label {
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        /* Listbox */
+        #materie {
+            font-size: 0.95rem;
+        }
+
+        /* Bottone */
+        .button-container {
+            text-align: center;
+        }
+
+        .form-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .form-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Modulo di Anagrafica</h1>
+        <form action="#">
+            <!-- Nome e Cognome -->
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cognome">Cognome</label>
+                <input type="text" id="cognome" name="cognome" required>
+            </div>
+
+            <!-- Indirizzo e Città -->
+            <div class="form-group">
+                <label for="indirizzo">Indirizzo</label>
+                <input type="text" id="indirizzo" name="indirizzo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="citta">Città</label>
+                <input type="text" id="citta" name="citta" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cap">CAP</label>
+                <input type="text" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)" required>
+            </div>
+
+            <!-- Data di Nascita -->
+            <div class="form-group">
+                <label for="dataNascita">Data di Nascita</label>
+                <input type="date" id="dataNascita" name="dataNascita" required>
+            </div>
+
+            <!-- Sesso -->
+            <div class="form-group">
+                <label>Sesso</label>
+                <div class="options-group">
+                    <label for="sessoM">Maschio</label>
+                    <input type="radio" id="sessoM" name="sesso" value="M">
+
+                    <label for="sessoF">Femmina</label>
+                    <input type="radio" id="sessoF" name="sesso" value="F">
+
+                    <label for="sessoAltro">Altro</label>
+                    <input type="radio" id="sessoAltro" name="sesso" value="Altro">
+                </div>
+            </div>
+
+            <!-- Provincia -->
+            <div class="form-group">
+                <label for="provincia">Provincia</label>
+                <select id="provincia" name="provincia">
+                    <option value="">Seleziona Provincia</option>
+                    <option value="MI">Milano</option>
+                    <option value="RM">Roma</option>
+                    <option value="NA">Napoli</option>
+                    <option value="TO">Torino</option>
+                    <option value="FI">Firenze</option>
+                    <option value="VE">Venezia</option>
+                    <option value="BO">Bologna</option>
+                    <option value="PA">Palermo</option>
+                    <option value="GE">Genova</option>
+                    <option value="CT">Catania</option>
+                </select>
+            </div>
+
+            <!-- Mezzi di locomozione -->
+            <div class="form-group">
+                <label>Mezzi di Locomozione Posseduti</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <label for="auto">Auto</label>
+                        <input type="checkbox" id="auto" name="mezzi[]" value="auto">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="moto">Moto</label>
+                        <input type="checkbox" id="moto" name="mezzi[]" value="moto">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="bici">Bici</label>
+                        <input type="checkbox" id="bici" name="mezzi[]" value="bici">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="aereo">Aereo</label>
+                        <input type="checkbox" id="aereo" name="mezzi[]" value="aereo">
+                    </div>
+                    <div class="checkbox-item">
+                        <label for="yacht">Yacht</label>
+                        <input type="checkbox" id="yacht" name="mezzi[]" value="yacht">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Materie preferite -->
+            <div class="form-group">
+                <label for="materie">Materie di Insegnamento Preferite (max 3)</label>
+                <select id="materie" name="materie[]" multiple size="5">
+                    <option value="matematica">Matematica</option>
+                    <option value="scienze">Scienze</option>
+                    <option value="italiano">Italiano</option>
+                    <option value="inglese">Inglese</option>
+                    <option value="storia">Storia</option>
+                    <option value="geografia">Geografia</option>
+                    <option value="arte">Arte</option>
+                    <option value="musica">Musica</option>
+                    <option value="educazione_fisica">Educazione Fisica</option>
+                </select>
+            </div>
+
+            <!-- Bottone invia -->
+            <div class="button-container">
+                <button type="submit" class="form-btn">Invia</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
