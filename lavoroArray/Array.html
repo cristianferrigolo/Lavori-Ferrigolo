@@ -1,0 +1,191 @@
+<!-- cristian ferrigolo -->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array casuale - Statistiche</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #5f72bd, #2352ea);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-top: 40px;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            width: 85%;
+            max-width: 1000px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cell {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .result-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .result {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        button {
+            background-color: #5f72bd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #4a5fa3;
+        }
+    </style>
+</head>
+
+<body onload="myFunction()">
+    <h1>Generatore di Numeri Casuali</h1>
+
+    <div class="container">
+        <h2>Array (100 numeri casuali tra -100 e 100)</h2>
+        <div id="array" class="grid">
+            <table id="tabella">
+                <!-- prova tabella -->
+                <tr id="riga1">
+                    <td id="colonna1"></td>
+                    <td id="colonna2"></td>
+                </tr>
+                <tr id="riga2">
+                    <td id=colonna3></td>
+                </tr>
+            </table>
+            <!-- I numeri generati appariranno qui -->
+        </div>
+
+        <div class="result-box">
+            <div class="result" id="media">Media: </div>
+            <div class="result" id="massimo">Massimo: </div>
+            <div class="result" id="minimo">Minimo: </div>
+        </div>
+
+        <h2 style="margin-top: 40px;">Numeri maggiori di 50</h2>
+        <div id="maggiori50" class="grid">
+            <table id="tabellaMaggiori">
+                <!-- prova tabella -->
+                <tr id="riga1">
+                    <td id="colonna1"></td>
+                    <td id="colonna2"></td>
+                </tr>
+                <tr id="riga2">
+                    <td id=colonna3></td>
+                </tr>
+            </table>
+            <!-- I numeri > 50 appariranno qui -->
+        </div>
+        <button onclick="myFunction()">🔄 Rigenera Numeri</button>
+    </div>
+
+    <script>
+        function myFunction() {
+            let numeri = [];
+            for (let i = 0; i < 100; i++) {
+                let n = Math.floor(Math.random() * 201) - 100;
+                numeri[i] = n;
+            }
+            //numeri maggiori di 50
+            let maggioriDiCinquanta = [];
+            let c = 0;
+            for (let i = 0; i < 100; i++) {
+                if (numeri[i] > 50) {
+                    maggioriDiCinquanta[c] = numeri[i];
+                    c++;
+                }
+            }
+            //media
+            let somma = 0;
+            for (let i = 0; i < numeri.length; i++) {
+                somma += numeri[i];
+            }
+            let media = somma / 100;
+
+            //massimo e minimo
+            let max = numeri[0];
+            let min = numeri[0];
+            for (let i = 0; i < numeri.length - 1; i++) {
+                if (max < numeri[i + 1]) {
+                    max = numeri[i + 1];
+                }
+            }
+            for (let i = 0; i < numeri.length - 1; i++) {
+                if (min > numeri[i + 1]) {
+                    min = numeri[i + 1];
+                }
+            }
+            //stampo griglia array (???)
+            for (let i = 0; i < numeri.length; i++) {
+                document.getElementById("colonna1").innerHTML = numeri[i];
+            }
+            for (let i = 0; i < maggioriDiCinquanta.length; i++) {
+                document.getElementById("tabellaMaggiori").innerHTML = maggioriDiCinquanta[i];
+            } //????????
+
+            //stampo valori calcolati
+            document.getElementById("media").textContent = "Media: " + media;
+            document.getElementById("massimo").textContent = "Massimo: " + max;
+            document.getElementById("minimo").textContent = "Minimo: " + min;
+        }
+
+    </script>>
+
+</body>
+
+</html>
