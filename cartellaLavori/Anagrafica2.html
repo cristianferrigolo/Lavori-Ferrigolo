@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,7 @@
         }
 
         /* Titolo di sezione più grande */
-        .form-group > label:first-child {
+        .form-group>label:first-child {
             font-size: 1.2rem;
             font-weight: bold;
             display: block;
@@ -69,7 +70,7 @@
         .options-group label {
             font-size: 0.95rem;
             color: #333;
-                    }
+        }
 
         /* Checkbox: testo a sinistra, quadratino a destra */
         .checkbox-group {
@@ -125,6 +126,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -154,7 +156,8 @@
 
             <div class="form-group">
                 <label for="cap">CAP</label>
-                <input type="text" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)" required>
+                <input type="text" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)"
+                    required>
             </div>
 
             <!-- Data di Nascita -->
@@ -166,34 +169,36 @@
             <!-- Sesso -->
             <div class="form-group">
                 <label>Sesso</label>
-                <div class="options-group">
-                    <label for="sessoM">Maschio</label>
-                    <input type="radio" id="sessoM" name="sesso" value="M">
+                <div class="radio-button">
 
-                    <label for="sessoF">Femmina</label>
-                    <input type="radio" id="sessoF" name="sesso" value="F">
+                    <input type="radio" id="sesso" name="sesso" value="M">Maschio
 
-                    <label for="sessoAltro">Altro</label>
-                    <input type="radio" id="sessoAltro" name="sesso" value="Altro">
+                    <input type="radio" id="sesso" name="sesso" value="F">Femmina
+
+                    <input type="radio" id="sesso" name="sesso" value="Altro">Altro
+
                 </div>
             </div>
 
             <!-- Provincia -->
             <div class="form-group">
                 <label for="provincia">Provincia</label>
-                <select id="provincia" name="provincia">
-                    <option value="">Seleziona Provincia</option>
-                    <option value="MI">Milano</option>
-                    <option value="RM">Roma</option>
-                    <option value="NA">Napoli</option>
-                    <option value="TO">Torino</option>
-                    <option value="FI">Firenze</option>
-                    <option value="VE">Venezia</option>
-                    <option value="BO">Bologna</option>
-                    <option value="PA">Palermo</option>
-                    <option value="GE">Genova</option>
-                    <option value="CT">Catania</option>
-                </select>
+                <div class="combobox">
+                    <select id="provincia" name="provincia">
+                        <option value="">Seleziona Provincia</option>
+                        <option value="MI">Milano</option>
+                        <option value="RM">Roma</option>
+                        <option value="NA">Napoli</option>
+                        <option value="TO">Torino</option>
+                        <option value="FI">Firenze</option>
+                        <option value="VE">Venezia</option>
+                        <option value="BO">Bologna</option>
+                        <option value="PA">Palermo</option>
+                        <option value="GE">Genova</option>
+                        <option value="CT">Catania</option>
+                    </select>
+                </div>
+
             </div>
 
             <!-- Mezzi di locomozione -->
@@ -202,26 +207,28 @@
                 <div class="checkbox-group">
                     <div class="checkbox-item">
                         <label for="auto">Auto</label>
-                        <input type="checkbox" id="auto" name="mezzi[]" value="auto">
+                        <input type="checkbox" id="auto" name="mezzi[]" value="Auto" onclick="onClickHandler(this);">
                     </div>
                     <div class="checkbox-item">
                         <label for="moto">Moto</label>
-                        <input type="checkbox" id="moto" name="mezzi[]" value="moto">
+                        <input type="checkbox" id="moto" name="mezzi[]" value="Moto" onclick="onClickHandler(this);">
                     </div>
                     <div class="checkbox-item">
                         <label for="bici">Bici</label>
-                        <input type="checkbox" id="bici" name="mezzi[]" value="bici">
+                        <input type="checkbox" id="bici" name="mezzi[]" value="Bici" onclick="onClickHandler(this);">
                     </div>
                     <div class="checkbox-item">
                         <label for="aereo">Aereo</label>
-                        <input type="checkbox" id="aereo" name="mezzi[]" value="aereo">
+                        <input type="checkbox" id="aereo" name="mezzi[]" value="Aereo" onclick="onClickHandler(this);">
                     </div>
                     <div class="checkbox-item">
                         <label for="yacht">Yacht</label>
-                        <input type="checkbox" id="yacht" name="mezzi[]" value="yacht">
+                        <input type="checkbox" id="yacht" name="mezzi[]" value="Yacht" onclick="onClickHandler(this);">
                     </div>
                 </div>
+                <p id="rispMezzi"></p>
             </div>
+
 
             <!-- Materie preferite -->
             <div class="form-group">
@@ -241,10 +248,113 @@
 
             <!-- Bottone invia -->
             <div class="button-container">
-                <button type="submit" class="form-btn">Invia</button>
+                <button type="submit" class="form-btn" onclick="myFunction()">Invia</button>
             </div>
+
+
         </form>
+
+        <!-- Stampa la risposta -->
+        <p id="risp"></p>
+
     </div>
 
+    <script>
+        // Variabile globale per i mezzi selezionati
+        let selezionati = [];
+
+        function onClickHandler(checkbox) {
+            let valore = checkbox.value;
+
+            if (checkbox.checked) {
+                selezionati.push(valore);
+            } else {
+                selezionati = selezionati.filter(item => item !== valore);
+            }
+
+            document.getElementById("rispMezzi").innerHTML =
+                selezionati.length > 0
+                    ? "Hai selezionato: " + selezionati.join(", ")
+                    : "Nessun mezzo selezionato.";
+        }
+
+        function myFunction() {
+            event.preventDefault(); // Evita il refresh della pagina
+
+            let nome = document.getElementById("nome").value;
+            let cognome = document.getElementById("cognome").value;
+            let indirizzo = document.getElementById("indirizzo").value;
+            let cap = parseInt(document.getElementById("cap").value);
+            let citta = document.getElementById("citta").value;
+
+            // ottiene l'anno dalla data di nascita
+            let dataNascita = document.getElementById("dataNascita").value;
+            let annoNascita = new Date(dataNascita).getFullYear();
+
+            let sesso = document.querySelector('input[name="sesso"]:checked')?.value || "Non specificato";
+            let provincia = document.getElementById("provincia").value;
+
+            // MATERIE (max 3)
+            let materieSelect = document.getElementById("materie");
+            let materieSelezionate = [];
+            for (let i = 0; i < materieSelect.options.length; i++) {
+                if (materieSelect.options[i].selected) {
+                    materieSelezionate.push(materieSelect.options[i].text);
+                }
+            }
+
+            if (materieSelezionate.length > 3) {
+                alert("Puoi selezionare al massimo 3 materie!");
+                return;
+            }
+
+            // Calcolo generazione
+            let descrizione = "";
+            switch (true) {
+                case (annoNascita >= 1901 && annoNascita <= 1927):
+                    descrizione = "fa parte della Greatest Generation";
+                    break;
+                case (annoNascita >= 1928 && annoNascita <= 1945):
+                    descrizione = "fa parte della Generazione Silenziosa";
+                    break;
+                case (annoNascita >= 1946 && annoNascita <= 1964):
+                    descrizione = "fa parte dei Baby Boomers";
+                    break;
+                case (annoNascita >= 1965 && annoNascita <= 1980):
+                    descrizione = "fa parte della Generazione X";
+                    break;
+                case (annoNascita >= 1981 && annoNascita <= 1996):
+                    descrizione = "fa parte dei Millennials";
+                    break;
+                case (annoNascita >= 1997 && annoNascita <= 2012):
+                    descrizione = "fa parte della Generazione Z";
+                    break;
+                case (annoNascita >= 2013):
+                    descrizione = "fa parte della Generazione Alpha";
+                    break;
+                default:
+                    descrizione = "ha inserito un anno di nascita non valido.";
+            }
+
+
+            // Stampa riepilogo sotto il form
+            document.getElementById("risp").innerHTML =
+                "<strong>DATI INSERITI:</strong><br>" +
+                "Nome: " + nome + "<br>" +
+                "Cognome: " + cognome + "<br>" +
+                "Indirizzo: " + indirizzo + "<br>" +
+                "Città: " + citta + " (" + provincia + ")<br>" +
+                "CAP: " + cap + "<br>" +
+                "Data di nascita: " + dataNascita + " → " + descrizione + "<br>" +
+                "Sesso: " + sesso + "<br>" +
+                "Mezzi posseduti: " + (selezionati.length > 0 ? selezionati.join(", ") : "Nessuno") + "<br>" +
+                "Materie preferite: " + (materieSelezionate.length > 0 ? materieSelezionate.join(", ") : "Nessuna");
+
+            
+        }
+    </script>
+
+
 </body>
+
 </html>
