@@ -1,223 +1,304 @@
+<!-- LAVORO DI FERRIGOLO -->
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anagrafica Utente</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagrafica 3 - FERRIGOLO</title>
     <style>
-      body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-/* Contenitore del form */
-form {
-  width: 80%;
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 25px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
+        body {
+            background: #f2f4f7;
+            padding: 20px;
+        }
 
-/* Titolo form */
-h1 {
-  text-align: center;
-  color: #333;
-  font-size: 2rem;
-  margin-bottom: 25px;
-}
+        form {
+            max-width: 600px;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-/* LABEL */
-label {
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 10px;
-  color: #222;
-  margin-top: 20px;
-}
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-/* INPUT, SELECT, DATE, NUMBER */
-input[type="text"],
-input[type="number"],
-input[type="date"],
-select,
-#materie {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #444;
+        }
 
-/* RADIO GROUP */
-.radio-group label {
-  display: inline-block;
-  margin-right: 15px;
-  font-weight: normal;
-  font-size: 0.95rem;
-}
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.2s;
+        }
 
-.radio-group input[type="radio"] {
-  margin-left: 10px;
-  accent-color: #007bff;
-  width: auto;
-}
+        input:focus,
+        select:focus {
+            border-color: #4a79ff;
+            outline: none;
+            box-shadow: 0 0 4px rgba(74, 121, 255, 0.5);
+        }
 
-/* CHECKBOX GROUP (versione a colonna elegante) */
-.checkbox-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 8px;
-}
+        .radio-group,
+        .checkbox-group {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-/* BLOCCO PER OGNI CHECKBOX */
-.checkbox-group label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 10px;
-  background-color: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-  font-size: 0.95rem;
-}
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+        }
 
-.checkbox-group label:hover {
-  background-color: #eef6ff;
-}
+        input[type="button"] {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #4a79ff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-.checkbox-group input[type="checkbox"] {
-  width: auto;
-  accent-color: #007bff;
-}
+        input[type="button"]:hover {
+            background-color: #355fe0;
+        }
 
-/* LISTA MULTIPLA */
-#materie {
-  font-size: 0.95rem;
-}
+        #output {
+            max-width: 600px;
+            background: #ffffff;
+            margin: 30px auto 0;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-/* BOTTONE */
-input[type="button"] {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 25px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  margin-top: 25px;
-}
-
-input[type="button"]:hover {
-  background-color: #0056b3;
-}
-
-/* CARD DELL'OUTPUT */
-#output {
-  width: 80%;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 25px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #333;
-}
-
-#output h2 {
-  text-align: center;
-  margin-bottom: 15px;
-  color: #222;
-}
-
+        #output h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <form id="anagraficaForm">
-    <h1>Anagrafica Generazionale</h1>
+        <h1>Anagrafica Generazionale</h1>
 
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" name="nome" required>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
 
-    <label for="cognome">Cognome</label>
-    <input type="text" id="cognome" name="cognome" required>
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome" required>
 
-    <label for="indirizzo">Indirizzo</label>
-    <input type="text" id="indirizzo" name="indirizzo">
+        <label for="indirizzo">Indirizzo</label>
+        <input type="text" id="indirizzo" name="indirizzo">
 
-    <label for="citta">Città</label>
-    <input type="text" id="citta" name="citta">
+        <label for="citta">Città</label>
+        <input type="text" id="citta" name="citta">
 
-    <label for="cap">CAP</label>
-    <input type="text" id="cap" name="cap">
+        <label for="cap">CAP</label>
+        <input type="text" id="cap" name="cap">
 
-    <label for="eta">Età</label>
-    <input type="number" id="eta" name="eta" placeholder="Età attuale">
+        <label for="eta">Età</label>
+        <input type="number" id="eta" name="eta" placeholder="Età attuale">
 
-    <label for="dataNascita">Data di nascita</label>
-    <input type="date" id="dataNascita" name="dataNascita">
+        <label for="dataNascita">Data di nascita</label>
+        <input type="date" id="dataNascita" name="dataNascita">
 
-    <label>Sesso</label>
-    <div class="radio-group">
-      <label><input type="radio" name="sesso" value="M"> M</label>
-      <label><input type="radio" name="sesso" value="F"> F</label>
-      <label><input type="radio" name="sesso" value="Altro"> Altro</label>
+        <label>Sesso</label>
+        <div class="radio-group">
+            <label><input type="radio" name="sesso" value="M"> M</label>
+            <label><input type="radio" name="sesso" value="F"> F</label>
+            <label><input type="radio" name="sesso" value="Altro"> Altro</label>
+        </div>
+
+        <label for="provincia">Provincia</label>
+        <select id="provincia" name="provincia">
+            <option value="">Seleziona Provincia</option>
+            <option value="MI">Milano</option>
+            <option value="RM">Roma</option>
+            <option value="NA">Napoli</option>
+            <option value="TO">Torino</option>
+            <option value="FI">Firenze</option>
+            <option value="VE">Venezia</option>
+            <option value="BO">Bologna</option>
+            <option value="PA">Palermo</option>
+            <option value="GE">Genova</option>
+            <option value="CT">Catania</option>
+        </select>
+
+        <label>Mezzi di locomozione posseduti in famiglia</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="mezzi" value="Auto"> Auto</label>
+            <label><input type="checkbox" name="mezzi" value="Moto"> Moto</label>
+            <label><input type="checkbox" name="mezzi" value="Bici"> Bici</label>
+            <label><input type="checkbox" name="mezzi" value="Aereo"> Aereo</label>
+            <label><input type="checkbox" name="mezzi" value="Yacht"> Yacht</label>
+        </div>
+
+        <label for="materie">Materie di insegnamento preferite (max 3)</label>
+        <select id="materie" name="materie" multiple>
+            <option>Matematica</option>
+            <option>Italiano</option>
+            <option>Inglese</option>
+            <option>Scienze</option>
+            <option>Storia</option>
+            <option>Geografia</option>
+            <option>Arte</option>
+            <option>Educazione fisica</option>
+            <option>Musica</option>
+        </select>
+
+        <input type="button" value="Invia dati" onclick="miaFunzione()">
+    </form>
+
+    <div id="output">
+        <h2>Dati Inseriti</h2>
+        <p>Compila il modulo.</p>
     </div>
 
-    <label for="provincia">Provincia</label>
-    <select id="provincia" name="provincia">
-      <option value="">-- Seleziona la provincia --</option>
-      <option>RM - Roma</option>
-      <option>MI - Milano</option>
-      <option>NA - Napoli</option>
-      <option>TO - Torino</option>
-      <option>FI - Firenze</option>
-      <option>VE - Venezia</option>
-      <option>BA - Bari</option>
-    </select>
+    <script>
+        function miaFunzione() {
+            const nome = document.getElementById("nome").value;
+            const cognome = document.getElementById("cognome").value;
+            const indirizzo = document.getElementById("indirizzo").value;
+            const citta = document.getElementById("citta").value;
+            const cap = document.getElementById("cap").value;
+            const eta = parseInt(document.getElementById("eta").value);
+            const dataNascita = document.getElementById("dataNascita").value;
 
-    <label>Mezzi di locomozione posseduti in famiglia</label>
-    <div class="checkbox-group">
-      <label><input type="checkbox" name="mezzi" value="Auto"> Auto</label>
-      <label><input type="checkbox" name="mezzi" value="Moto"> Moto</label>
-      <label><input type="checkbox" name="mezzi" value="Bici"> Bici</label>
-      <label><input type="checkbox" name="mezzi" value="Aereo"> Aereo</label>
-      <label><input type="checkbox" name="mezzi" value="Yacht"> Yacht</label>
-    </div>
+            var radios = document.getElementsByName("sesso");
+            var sesso = "Non specificato";
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    sesso = radios[i].value;
+                    break;
+                }
+            }
 
-    <label for="materie">Materie di insegnamento preferite (max 3)</label>
-    <select id="materie" name="materie" multiple>
-      <option>Matematica</option>
-      <option>Italiano</option>
-      <option>Inglese</option>
-      <option>Scienze</option>
-      <option>Storia</option>
-      <option>Geografia</option>
-      <option>Arte</option>
-      <option>Educazione fisica</option>
-      <option>Musica</option>
-    </select>
+            const provincia = document.getElementById("provincia").value;
 
-    <input type="button" value="Invia dati" onclick="stampa()">
-  </form>
+            var checkbox = document.getElementsByName("mezzi");
+            var mezzi = [];
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    mezzi.push(checkbox[i].value);
+                }
+            }
 
-  <div id="output">
-    <h2>Dati Inseriti</h2>
-    <p>Compila il modulo e premi "Invia dati" per vedere il riepilogo qui.</p>
-  </div>
-    <script src="scriptAnagrafica3.js"></script>
+            let materie = [];
+            let selected = document.getElementById("materie").selectedOptions;
 
-  </body>
+            for (let i = 0; i < selected.length; i++) {
+                let opzione = selected[i];
+                materie.push(opzione.value);
+            }
+
+            let mezziPosseduti;
+            if (mezzi.length > 0) {
+                mezziPosseduti = mezzi.join(", ");
+            } else {
+                mezziPosseduti = "Nessuno";
+            }
+
+            let materiePreferite;
+            if (materie.length > 0) {
+                materiePreferite = materie.join(", ");
+            } else {
+                materiePreferite = "Nessuna";
+            }
+
+            let generazione = "";
+            switch (true) {
+                case (eta >= 0 && eta <= 12):
+                    generazione = "Generazione Alpha";
+                    break;
+                case (eta >= 13 && eta <= 28):
+                    generazione = "Generazione Z";
+                    break;
+                case (eta >= 29 && eta <= 44):
+                    generazione = "Millennials";
+                    break;
+                case (eta >= 45 && eta <= 60):
+                    generazione = "Generazione X";
+                    break;
+                case (eta >= 61 && eta <= 79):
+                    generazione = "Baby Boomers";
+                    break;
+                case (eta >= 80 && eta <= 97):
+                    generazione = "Silent Generation";
+                    break;
+                case (eta >= 98):
+                    generazione = "Greatest Generation";
+                    break;
+                default:
+                    generazione = "Età non valida o non inserita";
+            }
+
+
+            const persona = {
+                nome: nome,
+                cognome: cognome,
+                eta: eta,
+                dataNascita: dataNascita,
+                sesso: sesso,
+                provincia: provincia,
+                generazione: generazione,
+                mezziPosseduti: mezziPosseduti,
+                materiePreferite: materiePreferite,
+
+                indirizzo: {
+                    via: indirizzo,
+                    citta: citta,
+                    cap: cap
+                }
+            };
+            document.getElementById("output").innerHTML =
+                "<h2>Dati Inseriti</h2>" +
+                "<p><strong>Nome:</strong> " + persona.nome + "</p>" +
+                "<p><strong>Cognome:</strong> " + persona.cognome + "</p>" +
+                "<p><strong>Indirizzo:</strong> " + persona.indirizzo.via + "</p>" +
+                "<p><strong>Città:</strong> " + persona.indirizzo.citta + "</p>" +
+                "<p><strong>CAP:</strong> " + persona.indirizzo.cap + "</p>" +
+                "<p><strong>Età:</strong> " + (persona.eta || "Non specificata") + "</p>" +
+                "<p><strong>Data di nascita:</strong> " + (persona.dataNascita || "Non indicata") + "</p>" +
+                "<p><strong>Sesso:</strong> " + persona.sesso + "</p>" +
+                "<p><strong>Provincia:</strong> " + persona.provincia + "</p>" +
+                "<p><strong>Mezzi posseduti:</strong> " + persona.mezziPosseduti + "</p>" +
+                "<p><strong>Materie preferite:</strong> " + persona.materiePreferite + "</p>" +
+                "<p><strong>Generazione:</strong> " + persona.generazione + "</p>";
+        }
+
+    </script>
+
+</body>
 
 </html>
-
-
