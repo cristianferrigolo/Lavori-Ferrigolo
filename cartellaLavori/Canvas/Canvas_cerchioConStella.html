@@ -8,11 +8,16 @@
         Your browser does not support the HTML canvas tag.</canvas>
 
     <script>
+
+        //variabile per scalare (1 - normale, aumenta il valore - si rimpicciolisce)
+        var x = 3;
+        
+
         //cerchio con base W3SCHOOL
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         ctx.beginPath();
-        ctx.arc(1000, 1000, 800, 0, 2 * Math.PI);
+        ctx.arc(1000/x, 1000/x, 800/x, 0, 2 * Math.PI);
         ctx.stroke();
 
         var a = 1000;
@@ -23,17 +28,18 @@
         var f = 1600;
         
         //stella
-        ctx.moveTo(a, b); //inizio linea1
-        ctx.lineTo(d, c);
-        ctx.moveTo(a, b); //inizio linea2
-        ctx.lineTo(e, c);
-        ctx.moveTo(e, c); //inizio linea3
-        ctx.lineTo(b, a);
-        ctx.moveTo(b, a); //inizio linea4
-        ctx.lineTo(f, a);
-        ctx.moveTo(f, a); //inizio linea5
-        ctx.lineTo(d, c);
+        ctx.moveTo(a/x, b/x); //inizio linea1
+        ctx.lineTo(d/x, c/x);
+        ctx.moveTo(a/x, b/x); //inizio linea2
+        ctx.lineTo(e/x, c/x);
+        ctx.moveTo(e/x, c/x); //inizio linea3
+        ctx.lineTo(b/x, a/x);
+        ctx.moveTo(b/x, a/x); //inizio linea4
+        ctx.lineTo(f/x, a/x);
+        ctx.moveTo(f/x, a/x); //inizio linea5
+        ctx.lineTo(d/x, c/x);
         ctx.stroke();
+
     </script>
 
 </body>
