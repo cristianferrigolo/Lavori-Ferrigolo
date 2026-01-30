@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo di Registrazione</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Modulo di Registrazione</h1>
+
+        <form method="post" action="#" name="invio">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Telefono:</label>
+                <input type="text" name="telefono" id="telefono" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="conferma">Conferma password:</label>
+                <input type="password" name="conferma" id="conferma" required>
+            </div>
+
+            <div class="form-group">
+                <input type="button" value="Invia" onClick="valida()">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
