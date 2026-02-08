@@ -61,5 +61,5 @@ function inviaDati() {
         if (i < persone.length - 1) { indici += ","; }
     }
 
-    window.location.href = "ricevente.html?indici=" + indici;
+    window.location.href = "datiRicevuti.html?indici=" + indici;
 }
