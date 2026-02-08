@@ -12,8 +12,5 @@ for (var i = 0; i < persone.length; i++) {
         "<td>" + persone[i].nome + "</td>" +
         "<td>" + persone[i].cognome + "</td>" +
         "<td>" + persone[i].eta + "</td>" +
-        "<td>" + persone[i].provincia + "</td>" +
-        "<td>" + persone[i].mezzi + "</td>" +
-        "<td>" + persone[i].materie + "</td>" +
         "</tr>";
 }

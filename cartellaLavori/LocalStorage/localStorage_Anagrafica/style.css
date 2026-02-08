@@ -8,10 +8,10 @@ body {
     padding: 30px 15px;
 }
 
-/* ---------- FORM ---------- */
+/* FORM */
 
 form {
-    max-width: 650px;
+    max-width: 600px;
     margin: auto;
     background: white;
     padding: 25px;
@@ -31,20 +31,12 @@ label {
     display: block;
 }
 
-input,
-select {
+input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
     border-radius: 8px;
     border: 1px solid #ccc;
-}
-
-.inline {
-    display: flex;
-    gap: 12px;
-    margin-top: 5px;
-    flex-wrap: wrap;
 }
 
 input[type="button"] {
@@ -54,15 +46,10 @@ input[type="button"] {
     border: none;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-input[type="button"]:hover {
-    background: #355fe0;
 }
 
 #lista {
-    max-width: 650px;
+    max-width: 600px;
     margin: 20px auto;
     background: white;
     padding: 15px;
@@ -70,8 +57,7 @@ input[type="button"]:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-
-/* ---------- TABELLA PAGINA RICEVENTE ---------- */
+/* TABELLA */
 
 table {
     width: 95%;
@@ -88,17 +74,13 @@ th {
     background: #2f5be7;
     color: white;
     padding: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     font-size: 14px;
 }
 
 td {
     padding: 12px 10px;
     text-align: center;
-    font-size: 14px;
 }
-
 
 tr:nth-child(even) td {
     background: #e6f0ff;
@@ -106,16 +88,4 @@ tr:nth-child(even) td {
 
 tr:nth-child(odd) td {
     background: #d4e4ff;
-}
-
-tr:first-child td {
-    background: white;
-}
-
-tr:last-child td:first-child {
-    border-bottom-left-radius: 15px;
-}
-
-tr:last-child td:last-child {
-    border-bottom-right-radius: 15px;
 }
