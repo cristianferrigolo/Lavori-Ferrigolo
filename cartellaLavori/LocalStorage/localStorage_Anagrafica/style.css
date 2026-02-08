@@ -1,15 +1,17 @@
 * {
     box-sizing: border-box;
-    font-family: Arial
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background: linear-gradient(135deg, #4a79ff, #6ed0ff);
-    padding: 20px;
+    padding: 30px 15px;
 }
 
+/* ---------- FORM ---------- */
+
 form {
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
     background: white;
     padding: 25px;
@@ -19,7 +21,7 @@ form {
 
 h1 {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #333;
 }
 
@@ -32,7 +34,7 @@ label {
 input,
 select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -40,8 +42,9 @@ select {
 
 .inline {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-top: 5px;
+    flex-wrap: wrap;
 }
 
 input[type="button"] {
@@ -59,10 +62,60 @@ input[type="button"]:hover {
 }
 
 #lista {
-    max-width: 600px;
+    max-width: 650px;
     margin: 20px auto;
     background: white;
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------- TABELLA PAGINA RICEVENTE ---------- */
+
+table {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+th {
+    background: #2f5be7;
+    color: white;
+    padding: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+td {
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+tr:nth-child(even) td {
+    background: #e6f0ff;
+}
+
+tr:nth-child(odd) td {
+    background: #d4e4ff;
+}
+
+tr:first-child td {
+    background: white;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
 }
