@@ -1,0 +1,333 @@
+<!-- LAVORO DI FERRIGOLO -->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagrafica 4 - FERRIGOLO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f2f4f7;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #4a79ff;
+            outline: none;
+            box-shadow: 0 0 4px rgba(74, 121, 255, 0.5);
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #4a79ff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #355fe0;
+        }
+
+        #output {
+            max-width: 600px;
+            background: #ffffff;
+            margin: 30px auto 0;
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #output h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="anagraficaForm">
+        <h1>Anagrafica4 - Ferrigolo</h1>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
+            title="Inserisci solo lettere (no numeri o simboli)">
+
+
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
+            title="Inserisci solo lettere (no numeri o simboli)">
+
+
+        <label for="indirizzo">Indirizzo</label>
+        <input type="text" id="indirizzo" name="indirizzo">
+
+        <label for="citta">Città</label>
+        <input type="text" id="citta" name="citta">
+
+        <label for="cap">CAP</label>
+        <input type="text" id="cap" name="cap" required pattern="[0-9]{5}"
+            title="Il CAP deve contenere esattamente 5 numeri">
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required minlength="3" maxlength="16"
+            pattern="[A-Za-z0-9!@#$%^&*()_+=\-]+"
+            title="Min 3 - Max 16 caratteri. Lettere, numeri e caratteri speciali">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required title="Inserisci una email valida (es: nome@email.com)">
+
+
+        <label for="eta">Età</label>
+        <input type="number" id="eta" name="eta" placeholder="Età attuale">
+
+        <label for="dataNascita">Data di nascita</label>
+        <input type="date" id="dataNascita" name="dataNascita">
+
+        <label>Sesso</label>
+        <div class="radio-group">
+            <label><input type="radio" name="sesso" value="M"> M</label>
+            <label><input type="radio" name="sesso" value="F"> F</label>
+            <label><input type="radio" name="sesso" value="Altro"> Altro</label>
+        </div>
+
+        <label for="provincia">Provincia</label>
+        <select id="provincia" name="provincia">
+            <option value="">Seleziona Provincia</option>
+            <option value="MI">Milano</option>
+            <option value="RM">Roma</option>
+            <option value="NA">Napoli</option>
+            <option value="TO">Torino</option>
+            <option value="FI">Firenze</option>
+            <option value="VE">Venezia</option>
+            <option value="BO">Bologna</option>
+            <option value="PA">Palermo</option>
+            <option value="GE">Genova</option>
+            <option value="CT">Catania</option>
+        </select>
+
+        <label>Mezzi di locomozione posseduti in famiglia</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="mezzi" value="Auto"> Auto</label>
+            <label><input type="checkbox" name="mezzi" value="Moto"> Moto</label>
+            <label><input type="checkbox" name="mezzi" value="Bici"> Bici</label>
+            <label><input type="checkbox" name="mezzi" value="Aereo"> Aereo</label>
+            <label><input type="checkbox" name="mezzi" value="Yacht"> Yacht</label>
+        </div>
+
+        <label for="materie">Materie di insegnamento preferite (max 3)</label>
+        <select id="materie" name="materie" multiple>
+            <option>Matematica</option>
+            <option>Italiano</option>
+            <option>Inglese</option>
+            <option>Scienze</option>
+            <option>Storia</option>
+            <option>Geografia</option>
+            <option>Arte</option>
+            <option>Educazione fisica</option>
+            <option>Musica</option>
+        </select>
+
+        <input type="submit" value="Invia dati">
+
+    </form>
+
+    <div id="output">
+        <h2>Dati Inseriti</h2>
+        <p>Compila il modulo.</p>
+    </div>
+
+    <script>
+
+        document.getElementById("anagraficaForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // blocca il refresh della pagina
+            miaFunzione();
+        });
+
+        function miaFunzione() {
+            const nome = document.getElementById("nome").value;
+            const cognome = document.getElementById("cognome").value;
+            const indirizzo = document.getElementById("indirizzo").value;
+            const citta = document.getElementById("citta").value;
+            const cap = document.getElementById("cap").value;
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const eta = parseInt(document.getElementById("eta").value);
+            const dataNascita = document.getElementById("dataNascita").value;
+
+            var radios = document.getElementsByName("sesso");
+            var sesso = "Non specificato";
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    sesso = radios[i].value;
+                    break;
+                }
+            }
+
+            const provincia = document.getElementById("provincia").value;
+
+            var checkbox = document.getElementsByName("mezzi");
+            var mezzi = [];
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    mezzi.push(checkbox[i].value);
+                }
+            }
+
+            let materie = [];
+            let selected = document.getElementById("materie").selectedOptions;
+
+            for (let i = 0; i < selected.length; i++) {
+                let opzione = selected[i];
+                materie.push(opzione.value);
+            }
+
+            let mezziPosseduti;
+            if (mezzi.length > 0) {
+                mezziPosseduti = mezzi.join(", ");
+            } else {
+                mezziPosseduti = "Nessuno";
+            }
+
+            let materiePreferite;
+            if (materie.length > 0) {
+                materiePreferite = materie.join(", ");
+            } else {
+                materiePreferite = "Nessuna";
+            }
+
+            let generazione = "";
+            switch (true) {
+                case (eta >= 0 && eta <= 12):
+                    generazione = "Generazione Alpha";
+                    break;
+                case (eta >= 13 && eta <= 28):
+                    generazione = "Generazione Z";
+                    break;
+                case (eta >= 29 && eta <= 44):
+                    generazione = "Millennials";
+                    break;
+                case (eta >= 45 && eta <= 60):
+                    generazione = "Generazione X";
+                    break;
+                case (eta >= 61 && eta <= 79):
+                    generazione = "Baby Boomers";
+                    break;
+                case (eta >= 80 && eta <= 97):
+                    generazione = "Silent Generation";
+                    break;
+                case (eta >= 98):
+                    generazione = "Greatest Generation";
+                    break;
+                default:
+                    generazione = "Età non valida o non inserita";
+            }
+
+
+            const persona = {
+                nome: nome,
+                cognome: cognome,
+                username: username,
+                email: email,
+                eta: eta,
+                dataNascita: dataNascita,
+                sesso: sesso,
+                provincia: provincia,
+                generazione: generazione,
+                mezziPosseduti: mezziPosseduti,
+                materiePreferite: materiePreferite,
+
+                indirizzo: {
+                    via: indirizzo,
+                    citta: citta,
+                    cap: cap
+                }
+            };
+
+            document.getElementById("output").innerHTML =
+                "<h2>Dati Inseriti</h2>" +
+                "<p><strong>Nome:</strong> " + persona.nome + "</p>" +
+                "<p><strong>Cognome:</strong> " + persona.cognome + "</p>" +
+                "<p><strong>Indirizzo:</strong> " + persona.indirizzo.via + "</p>" +
+                "<p><strong>Città:</strong> " + persona.indirizzo.citta + "</p>" +
+                "<p><strong>CAP:</strong> " + persona.indirizzo.cap + "</p>" +
+                "<p><strong>Username:</strong> " + persona.username + "</p>" +
+                "<p><strong>Email:</strong> " + persona.email + "</p>" +
+                "<p><strong>Età:</strong> " + (persona.eta || "Non specificata") + "</p>" +
+                "<p><strong>Data di nascita:</strong> " + (persona.dataNascita || "Non indicata") + "</p>" +
+                "<p><strong>Sesso:</strong> " + persona.sesso + "</p>" +
+                "<p><strong>Provincia:</strong> " + persona.provincia + "</p>" +
+                "<p><strong>Mezzi posseduti:</strong> " + persona.mezziPosseduti + "</p>" +
+                "<p><strong>Materie preferite:</strong> " + persona.materiePreferite + "</p>" +
+                "<p><strong>Generazione:</strong> " + persona.generazione + "</p>";
+        }
+
+    </script>
+
+</body>
+
+</html>
