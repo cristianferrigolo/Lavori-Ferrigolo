@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferrigolo - PWA Riconosci Immagini</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- TensorFlow -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Riconoscimento Animali</h1>
+        <p>Carica massimo 10 immagini</p>
+
+        <label for="imageInput" class="upload-btn">
+            Seleziona immagini
+        </label>
+        <input type="file" id="imageInput" accept="image/*" multiple>
+
+        <div id="previewContainer" class="preview-container"></div>
+
+        <div class="results">
+            <div class="box dog-box">
+                <span id="dogCount">0</span>
+                <p>Cani</p>
+            </div>
+
+            <div class="box cat-box">
+                <span id="catCount">0</span>
+                <p>Gatti</p>
+            </div>
+
+            <div class="box unknown-box">
+                <span id="unknownCount">0</span>
+                <p>Non riconosciuti</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
