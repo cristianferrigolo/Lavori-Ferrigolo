@@ -91,31 +91,33 @@
                 Torna alla Home
             </a>
         </div>
+        <div>
+            <form action="#" method="POST">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required><br><br>
 
-        <form action="#" method="POST">
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome" required><br><br>
+                <label for="cognome">Cognome:</label><br>
+                <input type="text" id="cognome" name="cognome" required><br><br>
 
-            <label for="cognome">Cognome:</label><br>
-            <input type="text" id="cognome" name="cognome" required><br><br>
+                <label for="indirizzo">Indirizzo:</label><br>
+                <input type="text" id="indirizzo" name="indirizzo" required><br><br>
 
-            <label for="indirizzo">Indirizzo:</label><br>
-            <input type="text" id="indirizzo" name="indirizzo" required><br><br>
+                <label for="cap">CAP:</label><br>
+                <input type="number" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)"
+                    required><br><br>
 
-            <label for="cap">CAP:</label><br>
-            <input type="number" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)"
-                required><br><br>
+                <label for="citta">Città:</label><br>
+                <input type="text" id="citta" name="citta" required><br><br>
 
-            <label for="citta">Città:</label><br>
-            <input type="text" id="citta" name="citta" required><br><br>
+                <label for="eta">Età (Anno di nascita):</label><br>
+                <input type="number" id="et" name="eta" required><br><br>
 
-            <label for="eta">Età (Anno di nascita):</label><br>
-            <input type="number" id="et" name="eta" required><br><br>
-
-            <input type="submit" onclick="myFunction()">
+                <input type="submit" onclick="myFunction()">
 
 
-        </form>
+            </form>
+        </div>
+
         <script>
             function myFunction() {
                 let nome = document.getElementById("nome").value;
