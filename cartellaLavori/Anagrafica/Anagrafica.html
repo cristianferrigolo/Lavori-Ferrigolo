@@ -83,68 +83,77 @@
 
 <body>
 
-    <form action="#" method="POST">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
+    <body>
+        <div style="max-width: 600px; margin: 0 auto 20px; text-align: center;">
+            <a href="cartellaLavori/index.html" target="_blank" rel="noopener noreferrer"
+                style="display: inline-block; padding: 12px 25px; background-color: #4a79ff; color: white; text-decoration: none; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.2s;"
+                onmouseover="this.style.backgroundColor='#355fe0'" onmouseout="this.style.backgroundColor='#4a79ff'">
+                Torna alla Home
+            </a>
+        </div>
 
-        <label for="cognome">Cognome:</label><br>
-        <input type="text" id="cognome" name="cognome" required><br><br>
+        <form action="#" method="POST">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
 
-        <label for="indirizzo">Indirizzo:</label><br>
-        <input type="text" id="indirizzo" name="indirizzo" required><br><br>
+            <label for="cognome">Cognome:</label><br>
+            <input type="text" id="cognome" name="cognome" required><br><br>
 
-        <label for="cap">CAP:</label><br>
-        <input type="number" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)"
-            required><br><br>
+            <label for="indirizzo">Indirizzo:</label><br>
+            <input type="text" id="indirizzo" name="indirizzo" required><br><br>
 
-        <label for="citta">Città:</label><br>
-        <input type="text" id="citta" name="citta" required><br><br>
+            <label for="cap">CAP:</label><br>
+            <input type="number" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)"
+                required><br><br>
 
-        <label for="eta">Età (Anno di nascita):</label><br>
-        <input type="number" id="et" name="eta" required><br><br>
+            <label for="citta">Città:</label><br>
+            <input type="text" id="citta" name="citta" required><br><br>
 
-        <input type="submit" onclick="myFunction()">
+            <label for="eta">Età (Anno di nascita):</label><br>
+            <input type="number" id="et" name="eta" required><br><br>
+
+            <input type="submit" onclick="myFunction()">
 
 
-    </form>
-    <script>
-        function myFunction() {
-            let nome = document.getElementById("nome").value;
-            let cognome = document.getElementById("cognome").value;
-            let indirizzo = document.getElementById("indirizzo").value;
-            let cap = parseInt(document.getElementById("cap").value);
-            let citta = document.getElementById("citta").value;
-            let eta = parseInt(document.getElementById("et").value);
+        </form>
+        <script>
+            function myFunction() {
+                let nome = document.getElementById("nome").value;
+                let cognome = document.getElementById("cognome").value;
+                let indirizzo = document.getElementById("indirizzo").value;
+                let cap = parseInt(document.getElementById("cap").value);
+                let citta = document.getElementById("citta").value;
+                let eta = parseInt(document.getElementById("et").value);
 
-            switch (true) { //uso true per far valere le condizioni nel case
-                case (eta >= 1901 && eta <= 1927):
-                    document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Greatest Generation");
-                    break;
-                case (eta >= 1928 && eta <= 1945):
-                    document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione Silenziosa");
-                    break;
-                case (eta >= 1946 && eta <= 1964):
-                    document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte dei Baby Boomers");
-                    break;
-                case (eta >= 1965 && eta <= 1980):
-                    document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione X");
-                    break;
-                case (eta >= 1981 && eta <= 1996):
-                    document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte dei Millenials");
-                    break;
-                case (eta >= 1997 && eta <= 2012):
-                    document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione Z");
-                    break;
-                case (eta >= 2013):
-                    document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione Alpha");
-                    break;
-                default:
-                    document.write("L'anno di nascita inserito non è valido o troppo lontano.");
+                switch (true) { //uso true per far valere le condizioni nel case
+                    case (eta >= 1901 && eta <= 1927):
+                        document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Greatest Generation");
+                        break;
+                    case (eta >= 1928 && eta <= 1945):
+                        document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione Silenziosa");
+                        break;
+                    case (eta >= 1946 && eta <= 1964):
+                        document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte dei Baby Boomers");
+                        break;
+                    case (eta >= 1965 && eta <= 1980):
+                        document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione X");
+                        break;
+                    case (eta >= 1981 && eta <= 1996):
+                        document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte dei Millenials");
+                        break;
+                    case (eta >= 1997 && eta <= 2012):
+                        document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione Z");
+                        break;
+                    case (eta >= 2013):
+                        document.write("L'utente " + nome + " " + cognome + " nato nel " + eta + ", residente a " + citta + "(" + cap + ")" + " in via " + indirizzo + " fa parte della Generazione Alpha");
+                        break;
+                    default:
+                        document.write("L'anno di nascita inserito non è valido o troppo lontano.");
 
+                }
             }
-        }
-    </script>
+        </script>
 
-</body>
+    </body>
 
 </html>
