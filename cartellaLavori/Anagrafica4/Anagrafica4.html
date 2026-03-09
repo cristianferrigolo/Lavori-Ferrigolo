@@ -114,29 +114,24 @@
         <h1>Anagrafica4 - Ferrigolo</h1>
 
         <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
-            title="Inserisci solo lettere (no numeri o simboli)">
+        <input type="text" id="nome" name="nome" required>
 
 
         <label for="cognome">Cognome</label>
-        <input type="text" id="cognome" name="cognome" required pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
-            title="Inserisci solo lettere (no numeri o simboli)">
+        <input type="text" id="cognome" name="cognome" required>
 
 
         <label for="indirizzo">Indirizzo</label>
-        <input type="text" id="indirizzo" name="indirizzo">
+        <input type="text" id="indirizzo" name="indirizzo" required>
 
         <label for="citta">Città</label>
-        <input type="text" id="citta" name="citta">
+        <input type="text" id="citta" name="citta" required>
 
         <label for="cap">CAP</label>
-        <input type="text" id="cap" name="cap" required pattern="[0-9]{5}"
-            title="Il CAP deve contenere esattamente 5 numeri">
+        <input type="text" id="cap" name="cap" required>
 
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" required minlength="3" maxlength="16"
-            pattern="[A-Za-z0-9!@#$%^&*()_+=\-]+"
-            title="Min 3 - Max 16 caratteri. Lettere, numeri e caratteri speciali">
+        <input type="text" id="username" name="username" required>
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required title="Inserisci una email valida (es: nome@email.com)">
@@ -148,7 +143,7 @@
 
 
         <label for="dataNascita">Data di nascita</label>
-        <input type="date" id="dataNascita" name="dataNascita">
+        <input type="date" id="dataNascita" name="dataNascita" required>
 
         <label>Sesso</label>
         <div class="radio-group">
@@ -211,12 +206,48 @@
         });
 
         function miaFunzione() {
-            const nome = document.getElementById("nome").value;
-            const cognome = document.getElementById("cognome").value;
+
+            const regexNomeCognome = /^[a-zA-Z]+$/;
+            const regexCAP = /^[0-9]+$/;
+            const regexUsername = /^.{3,16}$/;
+            const regexPassword = /^(?=.*[!@#$%^&*(),.?":{}|<>]).{12,}$/;
+
+            function validaCampi() {
+
+                const nome = document.getElementById("nome").value;
+                const cognome = document.getElementById("cognome").value;
+                const cap = document.getElementById("cap").value;
+                const username = document.getElementById("username").value;
+
+                let valido = true;
+                if (!regexNomeCognome.test(nome)) {
+                    alert("Il nome deve contenere solo lettere maiuscole e/o minuscole!");
+                    valido = false;
+                }
+
+                if (!regexNomeCognome.test(cognome)) {
+                    alert("Il cognome deve contenere solo lettere maiuscole e/o minuscole!");
+                    valido = false;
+                }
+
+                if (cap && !regexCAP.test(cap)) {
+                    alert("Il CAP deve contenere solo numeri!");
+                    valido = false;
+                }
+
+                if (username && !regexUsername.test(username)) {
+                    document.getElementById("usernameError").textContent = "L'username deve essere tra 3 e 16 caratteri!";
+                    valido = false;
+                } else {
+                    document.getElementById("usernameError").textContent = "";
+                }
+
+                return valido;
+            }
+
             const indirizzo = document.getElementById("indirizzo").value;
             const citta = document.getElementById("citta").value;
-            const cap = document.getElementById("cap").value;
-            const username = document.getElementById("username").value;
+
             const email = document.getElementById("email").value;
             const eta = parseInt(document.getElementById("eta").value);
             const dataNascita = document.getElementById("dataNascita").value;
@@ -310,22 +341,29 @@
                 }
             };
 
-            document.getElementById("output").innerHTML =
-                "<h2>Dati Inseriti</h2>" +
-                "<p><strong>Nome:</strong> " + persona.nome + "</p>" +
-                "<p><strong>Cognome:</strong> " + persona.cognome + "</p>" +
-                "<p><strong>Indirizzo:</strong> " + persona.indirizzo.via + "</p>" +
-                "<p><strong>Città:</strong> " + persona.indirizzo.citta + "</p>" +
-                "<p><strong>CAP:</strong> " + persona.indirizzo.cap + "</p>" +
-                "<p><strong>Username:</strong> " + persona.username + "</p>" +
-                "<p><strong>Email:</strong> " + persona.email + "</p>" +
-                "<p><strong>Età:</strong> " + (persona.eta || "Non specificata") + "</p>" +
-                "<p><strong>Data di nascita:</strong> " + (persona.dataNascita || "Non indicata") + "</p>" +
-                "<p><strong>Sesso:</strong> " + persona.sesso + "</p>" +
-                "<p><strong>Provincia:</strong> " + persona.provincia + "</p>" +
-                "<p><strong>Mezzi posseduti:</strong> " + persona.mezziPosseduti + "</p>" +
-                "<p><strong>Materie preferite:</strong> " + persona.materiePreferite + "</p>" +
-                "<p><strong>Generazione:</strong> " + persona.generazione + "</p>";
+            if (!validaCampi()) {
+                return;
+            }
+
+            function stampa() {
+                document.getElementById("output").innerHTML =
+                    "<h2>Dati Inseriti</h2>" +
+                    "<p><strong>Nome:</strong> " + persona.nome + "</p>" +
+                    "<p><strong>Cognome:</strong> " + persona.cognome + "</p>" +
+                    "<p><strong>Indirizzo:</strong> " + persona.indirizzo.via + "</p>" +
+                    "<p><strong>Città:</strong> " + persona.indirizzo.citta + "</p>" +
+                    "<p><strong>CAP:</strong> " + persona.indirizzo.cap + "</p>" +
+                    "<p><strong>Username:</strong> " + persona.username + "</p>" +
+                    "<p><strong>Email:</strong> " + persona.email + "</p>" +
+                    "<p><strong>Età:</strong> " + (persona.eta || "Non specificata") + "</p>" +
+                    "<p><strong>Data di nascita:</strong> " + (persona.dataNascita || "Non indicata") + "</p>" +
+                    "<p><strong>Sesso:</strong> " + persona.sesso + "</p>" +
+                    "<p><strong>Provincia:</strong> " + persona.provincia + "</p>" +
+                    "<p><strong>Mezzi posseduti:</strong> " + persona.mezziPosseduti + "</p>" +
+                    "<p><strong>Materie preferite:</strong> " + persona.materiePreferite + "</p>" +
+                    "<p><strong>Generazione:</strong> " + persona.generazione + "</p>";
+            }
+
         }
 
     </script>
