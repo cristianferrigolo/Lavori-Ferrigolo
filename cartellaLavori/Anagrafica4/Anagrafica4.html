@@ -75,7 +75,7 @@
             font-weight: normal;
         }
 
-        input[type="submit"] {
+        button[type="submit"] {
             width: 100%;
             margin-top: 25px;
             padding: 12px;
@@ -132,6 +132,7 @@
 
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
+        <span id="usernameError" style="color: red"></span>
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required title="Inserisci una email valida (es: nome@email.com)">
@@ -189,7 +190,7 @@
             <option>Musica</option>
         </select>
 
-        <input type="submit" value="Invia dati">
+        <button type="submit" onclick="miaFunzione()">Invia Dati</button>
 
     </form>
 
@@ -212,12 +213,12 @@
             const regexUsername = /^.{3,16}$/;
             const regexPassword = /^(?=.*[!@#$%^&*(),.?":{}|<>]).{12,}$/;
 
-            function validaCampi() {
+            const nome = document.getElementById("nome").value;
+            const cognome = document.getElementById("cognome").value;
+            const cap = document.getElementById("cap").value;
+            const username = document.getElementById("username").value;
 
-                const nome = document.getElementById("nome").value;
-                const cognome = document.getElementById("cognome").value;
-                const cap = document.getElementById("cap").value;
-                const username = document.getElementById("username").value;
+            function validaCampi() {
 
                 let valido = true;
                 if (!regexNomeCognome.test(nome)) {
@@ -345,26 +346,26 @@
                 return;
             }
 
-            function stampa() {
-                document.getElementById("output").innerHTML =
-                    "<h2>Dati Inseriti</h2>" +
-                    "<p><strong>Nome:</strong> " + persona.nome + "</p>" +
-                    "<p><strong>Cognome:</strong> " + persona.cognome + "</p>" +
-                    "<p><strong>Indirizzo:</strong> " + persona.indirizzo.via + "</p>" +
-                    "<p><strong>Città:</strong> " + persona.indirizzo.citta + "</p>" +
-                    "<p><strong>CAP:</strong> " + persona.indirizzo.cap + "</p>" +
-                    "<p><strong>Username:</strong> " + persona.username + "</p>" +
-                    "<p><strong>Email:</strong> " + persona.email + "</p>" +
-                    "<p><strong>Età:</strong> " + (persona.eta || "Non specificata") + "</p>" +
-                    "<p><strong>Data di nascita:</strong> " + (persona.dataNascita || "Non indicata") + "</p>" +
-                    "<p><strong>Sesso:</strong> " + persona.sesso + "</p>" +
-                    "<p><strong>Provincia:</strong> " + persona.provincia + "</p>" +
-                    "<p><strong>Mezzi posseduti:</strong> " + persona.mezziPosseduti + "</p>" +
-                    "<p><strong>Materie preferite:</strong> " + persona.materiePreferite + "</p>" +
-                    "<p><strong>Generazione:</strong> " + persona.generazione + "</p>";
-            }
+            //stampa
+            document.getElementById("output").innerHTML =
+                "<h2>Dati Inseriti</h2>" +
+                "<p><strong>Nome:</strong> " + persona.nome + "</p>" +
+                "<p><strong>Cognome:</strong> " + persona.cognome + "</p>" +
+                "<p><strong>Indirizzo:</strong> " + persona.indirizzo.via + "</p>" +
+                "<p><strong>Città:</strong> " + persona.indirizzo.citta + "</p>" +
+                "<p><strong>CAP:</strong> " + persona.indirizzo.cap + "</p>" +
+                "<p><strong>Username:</strong> " + persona.username + "</p>" +
+                "<p><strong>Email:</strong> " + persona.email + "</p>" +
+                "<p><strong>Età:</strong> " + (persona.eta || "Non specificata") + "</p>" +
+                "<p><strong>Data di nascita:</strong> " + (persona.dataNascita || "Non indicata") + "</p>" +
+                "<p><strong>Sesso:</strong> " + persona.sesso + "</p>" +
+                "<p><strong>Provincia:</strong> " + persona.provincia + "</p>" +
+                "<p><strong>Mezzi posseduti:</strong> " + persona.mezziPosseduti + "</p>" +
+                "<p><strong>Materie preferite:</strong> " + persona.materiePreferite + "</p>" +
+                "<p><strong>Generazione:</strong> " + persona.generazione + "</p>";
 
         }
+
 
     </script>
 
