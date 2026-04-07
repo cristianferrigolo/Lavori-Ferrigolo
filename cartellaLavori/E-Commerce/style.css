@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+/* HEADER */
+body>h2:first-of-type {
+    background: #4a90e2;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+/* CONTENITORE */
+#prodotti {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card b {
+    font-size: 18px;
+    color: #222;
+}
+
+/* BOTTONI */
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4a90e2;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #357abd;
+}
+
+/* CARRELLO */
+#carrello {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+}
+
+#carrello li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* SEZIONI */
+body {
+    padding: 20px;
+}

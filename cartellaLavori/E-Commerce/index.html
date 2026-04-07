@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Shop</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Carica file CSV</h2>
+    <input type="file" id="fileInput">
+
+    <h2>Prodotti</h2>
+    <div id="prodotti"></div>
+
+    <h2>Registrazione</h2>
+    <input type="text" id="nome" placeholder="Nome"><br>
+    <input type="text" id="cognome" placeholder="Cognome"><br>
+    <input type="email" id="email" placeholder="Email"><br>
+
+    <h2>Carrello</h2>
+    <ul id="carrello"></ul>
+    <button onclick="generaPDF()">Completa acquisto (PDF)</button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
