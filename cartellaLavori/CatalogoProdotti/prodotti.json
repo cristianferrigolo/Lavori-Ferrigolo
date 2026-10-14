@@ -2,124 +2,124 @@
   "negozio": "Emporio Bottega Verde - Rho (MI)",
   "prodotti": [
     {
-      "codice": "F001",
-      "nome": "Pasta di semola",
-      "marca": "Pastificio Rossi",
-      "descrizione": "Spaghetti di grano duro, confezione da 500 g.",
-      "prezzo": 1.49,
+      "codice": "F101",
+      "nome": "Riso Carnaroli",
+      "marca": "Riseria Lomellina",
+      "descrizione": "Riso per risotti, confezione sottovuoto da 1 kg.",
+      "prezzo": 3.10,
       "categoria": "Food",
       "disponibile": true,
-      "icona": "🍝"
+      "icona": "🍚"
     },
     {
-      "codice": "F002",
-      "nome": "Olio extravergine",
-      "marca": "Frantoio Ligure",
-      "descrizione": "Olio extravergine di oliva in bottiglia da 750 ml.",
-      "prezzo": 7.90,
+      "codice": "F102",
+      "nome": "Passata di pomodoro",
+      "marca": "Orto del Sole",
+      "descrizione": "Passata di pomodori maturi in bottiglia di vetro da 700 g.",
+      "prezzo": 1.35,
       "categoria": "Food",
       "disponibile": true,
-      "icona": "🫒"
+      "icona": "🍅"
     },
     {
-      "codice": "F003",
-      "nome": "Mele Golden",
-      "marca": "Frutteto Alpino",
-      "descrizione": "Mele fresche, vendute al chilogrammo.",
-      "prezzo": 2.30,
+      "codice": "F103",
+      "nome": "Pane integrale",
+      "marca": "Forno Santa Lucia",
+      "descrizione": "Pagnotta di pane integrale affettato, 500 g.",
+      "prezzo": 2.60,
       "categoria": "Food",
       "disponibile": true,
-      "icona": "🍎"
+      "icona": "🍞"
     },
     {
-      "codice": "F004",
-      "nome": "Latte intero",
+      "codice": "F104",
+      "nome": "Yogurt alla frutta",
       "marca": "Latteria Valpadana",
-      "descrizione": "Latte fresco intero, bottiglia da 1 litro.",
-      "prezzo": 1.65,
+      "descrizione": "Yogurt gusto fragola, vasetto da 125 g.",
+      "prezzo": 0.89,
       "categoria": "Food",
       "disponibile": false,
-      "icona": "🥛"
+      "icona": "🍓"
     },
     {
-      "codice": "F005",
-      "nome": "Parmigiano Reggiano",
-      "marca": "Caseificio Emiliano",
-      "descrizione": "Parmigiano stagionato 24 mesi, confezione da 250 g.",
-      "prezzo": 6.40,
+      "codice": "F105",
+      "nome": "Prosciutto cotto",
+      "marca": "Salumificio Brianza",
+      "descrizione": "Prosciutto cotto di alta qualità, 150 g.",
+      "prezzo": 3.80,
       "categoria": "Food",
       "disponibile": true,
-      "icona": "🧀"
+      "icona": "🥓"
     },
     {
-      "codice": "F006",
-      "nome": "Biscotti frollini",
+      "codice": "F106",
+      "nome": "Cioccolato fondente",
       "marca": "Dolce Forno",
-      "descrizione": "Frollini al burro per la colazione, 350 g.",
-      "prezzo": 2.20,
+      "descrizione": "Tavoletta di cioccolato fondente al 70%, 100 g.",
+      "prezzo": 1.95,
       "categoria": "Food",
       "disponibile": true,
-      "icona": "🍪"
+      "icona": "🍫"
     },
     {
-      "codice": "N001",
-      "nome": "Quaderno a quadretti",
+      "codice": "N101",
+      "nome": "Evidenziatori",
       "marca": "Cartoleria Italia",
-      "descrizione": "Quaderno A4 con 80 pagine a quadretti da 5 mm.",
-      "prezzo": 1.80,
+      "descrizione": "Set di 4 evidenziatori fluorescenti colori assortiti.",
+      "prezzo": 4.50,
       "categoria": "Non food",
       "disponibile": true,
-      "icona": "📓"
+      "icona": "🖍️"
     },
     {
-      "codice": "N002",
-      "nome": "Detersivo per piatti",
+      "codice": "N102",
+      "nome": "Sapone liquido",
       "marca": "Pulito Casa",
-      "descrizione": "Detersivo liquido al limone, flacone da 1 litro.",
-      "prezzo": 2.50,
+      "descrizione": "Sapone per le mani alla lavanda, flacone da 300 ml.",
+      "prezzo": 1.70,
       "categoria": "Non food",
       "disponibile": true,
-      "icona": "🧴"
+      "icona": "🧼"
     },
     {
-      "codice": "N003",
-      "nome": "Lampadina LED",
-      "marca": "LuceBella",
-      "descrizione": "Lampadina LED E27 da 10 W, luce calda.",
-      "prezzo": 3.90,
+      "codice": "N103",
+      "nome": "Batterie AA",
+      "marca": "PowerMax",
+      "descrizione": "Confezione da 8 batterie alcaline stilo AA.",
+      "prezzo": 5.90,
       "categoria": "Non food",
       "disponibile": true,
-      "icona": "💡"
+      "icona": "🔋"
     },
     {
-      "codice": "N004",
-      "nome": "Cuffie con filo",
+      "codice": "N104",
+      "nome": "Mouse wireless",
       "marca": "SoundTech",
-      "descrizione": "Cuffie stereo con microfono e cavo da 1,2 m.",
-      "prezzo": 12.90,
+      "descrizione": "Mouse senza fili con ricevitore USB e due pulsanti laterali.",
+      "prezzo": 14.50,
+      "categoria": "Non food",
+      "disponibile": true,
+      "icona": "🖱️"
+    },
+    {
+      "codice": "N105",
+      "nome": "Calcolatrice scientifica",
+      "marca": "MatematicaPlus",
+      "descrizione": "Calcolatrice scientifica con display a due righe.",
+      "prezzo": 17.80,
       "categoria": "Non food",
       "disponibile": false,
-      "icona": "🎧"
+      "icona": "🧮"
     },
     {
-      "codice": "N005",
-      "nome": "Zaino scolastico",
+      "codice": "N106",
+      "nome": "Borraccia termica",
       "marca": "Viaggiatore",
-      "descrizione": "Zaino con due scomparti e tasca laterale, 20 litri.",
-      "prezzo": 24.00,
+      "descrizione": "Borraccia in acciaio da 500 ml, mantiene la temperatura per 12 ore.",
+      "prezzo": 11.90,
       "categoria": "Non food",
       "disponibile": true,
-      "icona": "🎒"
-    },
-    {
-      "codice": "N006",
-      "nome": "Penne a sfera",
-      "marca": "Cartoleria Italia",
-      "descrizione": "Confezione da 10 penne a sfera blu.",
-      "prezzo": 3.20,
-      "categoria": "Non food",
-      "disponibile": true,
-      "icona": "🖊️"
+      "icona": "🥤"
     }
   ]
 }
