@@ -1,0 +1,125 @@
+{
+  "negozio": "Emporio Bottega Verde - Rho (MI)",
+  "prodotti": [
+    {
+      "codice": "F001",
+      "nome": "Pasta di semola",
+      "marca": "Pastificio Rossi",
+      "descrizione": "Spaghetti di grano duro, confezione da 500 g.",
+      "prezzo": 1.49,
+      "categoria": "Food",
+      "disponibile": true,
+      "icona": "🍝"
+    },
+    {
+      "codice": "F002",
+      "nome": "Olio extravergine",
+      "marca": "Frantoio Ligure",
+      "descrizione": "Olio extravergine di oliva in bottiglia da 750 ml.",
+      "prezzo": 7.90,
+      "categoria": "Food",
+      "disponibile": true,
+      "icona": "🫒"
+    },
+    {
+      "codice": "F003",
+      "nome": "Mele Golden",
+      "marca": "Frutteto Alpino",
+      "descrizione": "Mele fresche, vendute al chilogrammo.",
+      "prezzo": 2.30,
+      "categoria": "Food",
+      "disponibile": true,
+      "icona": "🍎"
+    },
+    {
+      "codice": "F004",
+      "nome": "Latte intero",
+      "marca": "Latteria Valpadana",
+      "descrizione": "Latte fresco intero, bottiglia da 1 litro.",
+      "prezzo": 1.65,
+      "categoria": "Food",
+      "disponibile": false,
+      "icona": "🥛"
+    },
+    {
+      "codice": "F005",
+      "nome": "Parmigiano Reggiano",
+      "marca": "Caseificio Emiliano",
+      "descrizione": "Parmigiano stagionato 24 mesi, confezione da 250 g.",
+      "prezzo": 6.40,
+      "categoria": "Food",
+      "disponibile": true,
+      "icona": "🧀"
+    },
+    {
+      "codice": "F006",
+      "nome": "Biscotti frollini",
+      "marca": "Dolce Forno",
+      "descrizione": "Frollini al burro per la colazione, 350 g.",
+      "prezzo": 2.20,
+      "categoria": "Food",
+      "disponibile": true,
+      "icona": "🍪"
+    },
+    {
+      "codice": "N001",
+      "nome": "Quaderno a quadretti",
+      "marca": "Cartoleria Italia",
+      "descrizione": "Quaderno A4 con 80 pagine a quadretti da 5 mm.",
+      "prezzo": 1.80,
+      "categoria": "Non food",
+      "disponibile": true,
+      "icona": "📓"
+    },
+    {
+      "codice": "N002",
+      "nome": "Detersivo per piatti",
+      "marca": "Pulito Casa",
+      "descrizione": "Detersivo liquido al limone, flacone da 1 litro.",
+      "prezzo": 2.50,
+      "categoria": "Non food",
+      "disponibile": true,
+      "icona": "🧴"
+    },
+    {
+      "codice": "N003",
+      "nome": "Lampadina LED",
+      "marca": "LuceBella",
+      "descrizione": "Lampadina LED E27 da 10 W, luce calda.",
+      "prezzo": 3.90,
+      "categoria": "Non food",
+      "disponibile": true,
+      "icona": "💡"
+    },
+    {
+      "codice": "N004",
+      "nome": "Cuffie con filo",
+      "marca": "SoundTech",
+      "descrizione": "Cuffie stereo con microfono e cavo da 1,2 m.",
+      "prezzo": 12.90,
+      "categoria": "Non food",
+      "disponibile": false,
+      "icona": "🎧"
+    },
+    {
+      "codice": "N005",
+      "nome": "Zaino scolastico",
+      "marca": "Viaggiatore",
+      "descrizione": "Zaino con due scomparti e tasca laterale, 20 litri.",
+      "prezzo": 24.00,
+      "categoria": "Non food",
+      "disponibile": true,
+      "icona": "🎒"
+    },
+    {
+      "codice": "N006",
+      "nome": "Penne a sfera",
+      "marca": "Cartoleria Italia",
+      "descrizione": "Confezione da 10 penne a sfera blu.",
+      "prezzo": 3.20,
+      "categoria": "Non food",
+      "disponibile": true,
+      "icona": "🖊️"
+    }
+  ]
+}
