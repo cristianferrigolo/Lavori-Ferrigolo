@@ -3,99 +3,49 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Anagrafica della classe (XML)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
-      color: #333333;
-      margin: 0;
-      padding: 30px 15px;
-      text-align: center;
-    }
-
-    h1 {
-      color: #1e3a5f;
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin-bottom: 25px;
-    }
-
-    table {
-      margin: 0 auto;
-      border-collapse: collapse;
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-      min-width: 400px;
-    }
-
-    th {
-      background-color: #1e3a5f;
-      color: #ffffff;
-      padding: 12px 20px;
-      text-transform: uppercase;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    td {
-      padding: 10px 20px;
-      border-bottom: 1px solid #dddddd;
-    }
-
-    tr:nth-child(even) td {
-      background-color: #f5f8fc;
-    }
-
-    tr:hover td {
-      background-color: #dbe8f7;
-    }
-
-    tr:last-child td {
-      border-bottom: 3px solid #1e3a5f;
-    }
-  </style>
+  <title>Anagrafica (XML)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="loadDoc()">
+<body>
 
-  <h1>Anagrafica della classe</h1>
-  <p>I dati vengono letti dal file <b>classe.xml</b> con XMLHttpRequest.</p>
+  <h1>Elenco utenti</h1>
+  <p>I dati vengono letti da un file <b>XML</b> con XMLHttpRequest.</p>
 
-  <table id="demo"></table>
+  <div id="demo"></div>
 
   <script>
-    function loadDoc() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          myFunction(this);
-        }
-      };
-      xhttp.open("GET", "classe.xml", true);
-      xhttp.send();
-    }
+    var xmlhttp = new XMLHttpRequest();
 
-    function myFunction(xml) {
-      var i;
-      var xmlDoc = xml.responseXML;
-      var table = "<tr><th>Cognome</th><th>Nome</th><th>Età</th><th>Città</th></tr>";
-      var x = xmlDoc.getElementsByTagName("studente");
-      for (i = 0; i < x.length; i++) {
-        table += "<tr><td>" +
-          x[i].getElementsByTagName("cognome")[0].childNodes[0].nodeValue +
-          "</td><td>" +
-          x[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue +
-          "</td><td>" +
-          x[i].getElementsByTagName("eta")[0].childNodes[0].nodeValue +
-          "</td><td>" +
-          x[i].getElementsByTagName("citta")[0].childNodes[0].nodeValue +
-          "</td></tr>";
+    xmlhttp.onload = function () {
+      if (this.status == 200) {
+        var xmlDoc = this.responseXML;
+        var utenti = xmlDoc.getElementsByTagName("utente");
+        var txt = "";
+        var i;
+
+        txt += "<table>";
+        txt += "<tr>";
+        txt += "<th>N.</th>";
+        txt += "<th>Nome</th>";
+        txt += "<th>Cognome</th>";
+        txt += "</tr>";
+
+        for (i = 0; i < utenti.length; i++) {
+          txt += "<tr>";
+          txt += "<td>" + (i + 1) + "</td>";
+          txt += "<td>" + utenti[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue + "</td>";
+          txt += "<td>" + utenti[i].getElementsByTagName("cognome")[0].childNodes[0].nodeValue + "</td>";
+          txt += "</tr>";
+        }
+
+        txt += "</table>";
+        document.getElementById("demo").innerHTML = txt;
       }
-      document.getElementById("demo").innerHTML = table;
-    }
+    };
+
+    xmlhttp.open("GET", "https://ppetrozzi.github.io/lavori/xml/nomi.xml", true);
+    xmlhttp.send();
   </script>
 
 </body>
