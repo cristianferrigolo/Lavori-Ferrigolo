@@ -5,123 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FERRIGOLO CRISTIAN</title>
-
     <style>
-        /* Reset e Setup Base */
+        /* Reset e Stile Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
         }
 
         body {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
-            background: linear-gradient(135deg, #eef2f7 0%, #d9e2ec 100%);
-            color: #1a202c;
-            padding: 40px 20px 20px 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* Header / Titolo */
-        header {
-            text-align: center;
-            margin-bottom: 35px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 20px 35px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: #222;
+            padding: 40px 20px;
         }
 
         h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            letter-spacing: 1px;
             color: #1a202c;
-        }
-
-        h1 span {
-            color: #357ab8;
-        }
-
-        /* Griglia Card Lavori */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            width: 100%;
-        }
-
-        /* Card Link */
-        .card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #2d3748;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e2e8f0;
-            border-left: 5px solid #4a90e2;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(74, 144, 226, 0.18);
-            border-left-color: #357ab8;
-            background-color: #ffffff;
-        }
-
-        .card-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .card-date {
-            align-self: flex-start;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #4a90e2;
-            background-color: #ebf8ff;
-            padding: 4px 10px;
-            border-radius: 20px;
-            border: 1px solid #bee3f8;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: #64748b;
             text-align: center;
         }
 
-        /* Responsiveness per schermi piccoli */
+        /* Contenitore a Griglia Ordinata per i Link */
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 40px;
+        }
+
+        /* Stile dei singoli link (trasformati in card pulite) */
+        .links-container a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #ffffff;
+            color: #2d3748;
+            text-decoration: none;
+            border-radius: 8px;
+            border-left: 4px solid #4a90e2;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .links-container a:hover {
+            background-color: #f7fafc;
+            color: #357ab8;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-left-color: #357ab8;
+        }
+
+        /* Footer pulito */
+        footer {
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Responsive per telefoni */
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
-            .grid-container {
+
+            .links-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -129,22 +89,41 @@
 </head>
 
 <body>
+
     <h1>FERRIGOLO CRISTIAN - Lavori 2025/2026 (TPS)</h1>
 
-    <a href="cartellaLavori/Anagrafica/Anagrafica.html" target="_blank" rel="noopener noreferrer">Anagrafica.html (19/10/2025)</a>
-    <a href="cartellaLavori/Array/Array.html" target="_blank" rel="noopener noreferrer">Array.html (02/11/2025)</a>
-    <a href="cartellaLavori/Anagrafica2/Anagrafica2.html" target="_blank" rel="noopener noreferrer">Anagrafica2.html (09/11/2025)</a>
-    <a href="cartellaLavori/Anagrafica3/Anagrafica3.html" target="_blank" rel="noopener noreferrer">Anagrafica3.html (23/11/2025)</a>
-    <a href="cartellaLavori/Canvas/Canvas_cerchioConStella.html" target="_blank" rel="noopener noreferrer">Canvas_cerchioConStella.html (15/12/2025)</a>
-    <a href="cartellaLavori/ValidazioneForm/Validazione_form.html" target="_blank" rel="noopener noreferrer">Validazione_form.html (01/02/2026)</a>
-    <a href="cartellaLavori/LocalStorage/localStorage_Anagrafica/index.html" target="_blank" rel="noopener noreferrer">LocalStorage_Anagrafica.html (08/02/2026)</a>
-    <a href="cartellaLavori/Anagrafica4/Anagrafica4.html" target="_blank" rel="noopener noreferrer">Anagrafica4.html (15/02/2026)</a>
-    <a href="cartellaLavori/PWA_Riconoscimento_Immagini/index.html" target="_blank" rel="noopener noreferrer">PWA Riconoscimento Immagini (22/02/2026)</a>
-    <a href="cartellaLavori/E-Commerce/index.html" target="_blank" rel="noopener noreferrer">E-Commerce (07/04/2026)</a>
-    <a href="cartellaLavori/CatalogoProdotti/catalogo_prodotti.html" target="_blank" rel="noopener noreferrer">Catalogo Prodotti (14/10/2026)</a>
-    <a href="cartellaLavori/" target="_blank" rel="noopener noreferrer">Dati Covid</a>
-    <a href="cartellaLavori/Lettura XML/leggi_classe.html" target="_blank" rel="noopener noreferrer">Lettura XML (28/20/2026)</a>
-    
+    <div class="links-container">
+        <a href="cartellaLavori/Anagrafica/Anagrafica.html" target="_blank" rel="noopener noreferrer">Anagrafica.html
+            <span>(19/10/2025)</span></a>
+        <a href="cartellaLavori/Array/Array.html" target="_blank" rel="noopener noreferrer">Array.html
+            <span>(02/11/2025)</span></a>
+        <a href="cartellaLavori/Anagrafica2/Anagrafica2.html" target="_blank" rel="noopener noreferrer">Anagrafica2.html
+            <span>(09/11/2025)</span></a>
+        <a href="cartellaLavori/Anagrafica3/Anagrafica3.html" target="_blank" rel="noopener noreferrer">Anagrafica3.html
+            <span>(23/11/2025)</span></a>
+        <a href="cartellaLavori/Canvas/Canvas_cerchioConStella.html" target="_blank"
+            rel="noopener noreferrer">Canvas_cerchioConStella.html <span>(15/12/2025)</span></a>
+        <a href="cartellaLavori/ValidazioneForm/Validazione_form.html" target="_blank"
+            rel="noopener noreferrer">Validazione_form.html <span>(01/02/2026)</span></a>
+        <a href="cartellaLavori/LocalStorage/localStorage_Anagrafica/index.html" target="_blank"
+            rel="noopener noreferrer">LocalStorage_Anagrafica.html <span>(08/02/2026)</span></a>
+        <a href="cartellaLavori/Anagrafica4/Anagrafica4.html" target="_blank" rel="noopener noreferrer">Anagrafica4.html
+            <span>(15/02/2026)</span></a>
+        <a href="cartellaLavori/PWA_Riconoscimento_Immagini/index.html" target="_blank" rel="noopener noreferrer">PWA
+            Riconoscimento Immagini <span>(22/02/2026)</span></a>
+        <a href="cartellaLavori/E-Commerce/index.html" target="_blank" rel="noopener noreferrer">E-Commerce
+            <span>(07/04/2026)</span></a>
+        <a href="cartellaLavori/CatalogoProdotti/catalogo_prodotti.html" target="_blank"
+            rel="noopener noreferrer">Catalogo Prodotti <span>(14/10/2026)</span></a>
+        <a href="cartellaLavori/" target="_blank" rel="noopener noreferrer">Dati Covid <span></span></a>
+        <a href="cartellaLavori/Lettura XML/leggi_classe.html" target="_blank" rel="noopener noreferrer">Lettura XML
+            <span>(28/10/2026)</span></a>
+    </div>
+
+    <footer>
+        <p>© Ferrigolo Cristian</p>
+    </footer>
+
 </body>
 
 </html>
