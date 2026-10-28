@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Anagrafica della classe (XML)</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  table { border-collapse: collapse; }
+  th, td { border: 1px solid black; padding: 6px 12px; }
+  th { background-color: #dddddd; }
+</style>
+</head>
+<body onload="loadDoc()">
+
+<h1>Anagrafica della classe</h1>
+<p>I dati vengono letti dal file <b>classe.xml</b> con XMLHttpRequest.</p>
+
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "classe.xml", true);
+  xhttp.send();
+}
+
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table = "<tr><th>Cognome</th><th>Nome</th><th>Età</th><th>Città</th></tr>";
+  var x = xmlDoc.getElementsByTagName("studente");
+  for (i = 0; i < x.length; i++) {
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("cognome")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("nome")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("eta")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("citta")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>

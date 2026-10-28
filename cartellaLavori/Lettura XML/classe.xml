@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classe>
+  <studente>
+    <cognome>Rossi</cognome>
+    <nome>Mario</nome>
+    <eta>18</eta>
+    <citta>Rho</citta>
+  </studente>
+  <studente>
+    <cognome>Bianchi</cognome>
+    <nome>Laura</nome>
+    <eta>17</eta>
+    <citta>Milano</citta>
+  </studente>
+  <studente>
+    <cognome>Verdi</cognome>
+    <nome>Andrea</nome>
+    <eta>18</eta>
+    <citta>Codogno</citta>
+  </studente>
+  <studente>
+    <cognome>Neri</cognome>
+    <nome>Giulia</nome>
+    <eta>17</eta>
+    <citta>Rho</citta>
+  </studente>
+  <studente>
+    <cognome>Gallo</cognome>
+    <nome>Luca</nome>
+    <eta>18</eta>
+    <citta>Lodi</citta>
+  </studente>
+</classe>
