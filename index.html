@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FERRIGOLO CRISTIAN</title>
     <style>
-        /* Reset e Stile Base */
+        /* Reset base e impostazioni generali */
         * {
             margin: 0;
             padding: 0;
@@ -21,53 +21,57 @@
             align-items: center;
             background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
             color: #222;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
 
         h1 {
-            margin-bottom: 30px;
-            font-size: 2rem;
-            letter-spacing: 1px;
+            margin-bottom: 35px;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
             color: #1a202c;
             text-align: center;
         }
 
-        /* Contenitore a Griglia Ordinata per i Link */
-        .links-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
+        /* Contenitore a elenco verticale */
+        .elenco-lavori {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            /* Spazio generoso tra un elemento e l'altro per evitare l'effetto ammassato */
             width: 100%;
-            max-width: 1000px;
+            max-width: 650px;
+            /* Larghezza controllata ideale per la lettura a elenco */
             margin-bottom: 40px;
         }
 
-        /* Stile dei singoli link (trasformati in card pulite) */
-        .links-container a {
+        /* Stile dei singoli link nell'elenco */
+        .elenco-lavori a {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 16px 24px;
             background-color: #ffffff;
             color: #2d3748;
             text-decoration: none;
-            border-radius: 8px;
-            border-left: 4px solid #4a90e2;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            border-left: 5px solid #4a90e2;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
             transition: all 0.25s ease;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
-        .links-container a:hover {
-            background-color: #f7fafc;
+        /* Effetto al passaggio del mouse */
+        .elenco-lavori a:hover {
+            background-color: #f8fafc;
             color: #357ab8;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transform: translateX(6px);
+            /* Leggero scorrimento laterale elegante */
+            box-shadow: 0 6px 18px rgba(74, 144, 226, 0.15);
             border-left-color: #357ab8;
         }
 
-        /* Footer pulito */
+        /* Footer */
         footer {
             margin-top: auto;
             font-size: 0.9rem;
@@ -75,14 +79,16 @@
             text-align: center;
         }
 
-        /* Responsive per telefoni */
+        /* Responsive per smartphone */
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                padding: 0 10px;
             }
 
-            .links-container {
-                grid-template-columns: 1fr;
+            .elenco-lavori a {
+                padding: 14px 18px;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -92,32 +98,32 @@
 
     <h1>FERRIGOLO CRISTIAN - Lavori 2025/2026 (TPS)</h1>
 
-    <div class="links-container">
+    <!-- Contenitore aggiunto solo attorno ai link per gestirne lo stile a elenco -->
+    <div class="elenco-lavori">
         <a href="cartellaLavori/Anagrafica/Anagrafica.html" target="_blank" rel="noopener noreferrer">Anagrafica.html
-            <span>(19/10/2025)</span></a>
-        <a href="cartellaLavori/Array/Array.html" target="_blank" rel="noopener noreferrer">Array.html
-            <span>(02/11/2025)</span></a>
+            (19/10/2025)</a>
+        <a href="cartellaLavori/Array/Array.html" target="_blank" rel="noopener noreferrer">Array.html (02/11/2025)</a>
         <a href="cartellaLavori/Anagrafica2/Anagrafica2.html" target="_blank" rel="noopener noreferrer">Anagrafica2.html
-            <span>(09/11/2025)</span></a>
+            (09/11/2025)</a>
         <a href="cartellaLavori/Anagrafica3/Anagrafica3.html" target="_blank" rel="noopener noreferrer">Anagrafica3.html
-            <span>(23/11/2025)</span></a>
+            (23/11/2025)</a>
         <a href="cartellaLavori/Canvas/Canvas_cerchioConStella.html" target="_blank"
-            rel="noopener noreferrer">Canvas_cerchioConStella.html <span>(15/12/2025)</span></a>
+            rel="noopener noreferrer">Canvas_cerchioConStella.html (15/12/2025)</a>
         <a href="cartellaLavori/ValidazioneForm/Validazione_form.html" target="_blank"
-            rel="noopener noreferrer">Validazione_form.html <span>(01/02/2026)</span></a>
+            rel="noopener noreferrer">Validazione_form.html (01/02/2026)</a>
         <a href="cartellaLavori/LocalStorage/localStorage_Anagrafica/index.html" target="_blank"
-            rel="noopener noreferrer">LocalStorage_Anagrafica.html <span>(08/02/2026)</span></a>
+            rel="noopener noreferrer">LocalStorage_Anagrafica.html (08/02/2026)</a>
         <a href="cartellaLavori/Anagrafica4/Anagrafica4.html" target="_blank" rel="noopener noreferrer">Anagrafica4.html
-            <span>(15/02/2026)</span></a>
+            (15/02/2026)</a>
         <a href="cartellaLavori/PWA_Riconoscimento_Immagini/index.html" target="_blank" rel="noopener noreferrer">PWA
-            Riconoscimento Immagini <span>(22/02/2026)</span></a>
+            Riconoscimento Immagini (22/02/2026)</a>
         <a href="cartellaLavori/E-Commerce/index.html" target="_blank" rel="noopener noreferrer">E-Commerce
-            <span>(07/04/2026)</span></a>
+            (07/04/2026)</a>
         <a href="cartellaLavori/CatalogoProdotti/catalogo_prodotti.html" target="_blank"
-            rel="noopener noreferrer">Catalogo Prodotti <span>(14/10/2026)</span></a>
-        <a href="cartellaLavori/" target="_blank" rel="noopener noreferrer">Dati Covid <span></span></a>
+            rel="noopener noreferrer">Catalogo Prodotti (14/10/2026)</a>
+        <a href="cartellaLavori/" target="_blank" rel="noopener noreferrer">Dati Covid</a>
         <a href="cartellaLavori/Lettura XML/leggi_classe.html" target="_blank" rel="noopener noreferrer">Lettura XML
-            <span>(28/10/2026)</span></a>
+            (28/20/2026)</a>
     </div>
 
     <footer>
