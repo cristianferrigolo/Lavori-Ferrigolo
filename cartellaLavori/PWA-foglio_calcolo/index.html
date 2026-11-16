@@ -15,7 +15,7 @@
     <strong class="text-success">Mini-Foglio</strong>
     <input id="namebox" class="form-control form-control-sm text-center" style="width:72px" readonly aria-label="Cella selezionata">
     <span class="fw-bold">fx</span>
-    <input id="fbar" class="form-control form-control-sm flex-grow-1" style="min-width:140px;width:auto" autocomplete="off" spellcheck="false" aria-label="Barra della formula">
+    <input id="fbar" class="form-control form-control-sm flex-grow-1" style="min-width:140px;width:auto" maxlength="1" inputmode="numeric" autocomplete="off" spellcheck="false" aria-label="Barra della formula">
     <button id="btnCsv" class="btn btn-sm btn-outline-success">CSV</button>
     <button id="btnClear" class="btn btn-sm btn-outline-danger">Svuota</button>
     <button id="btnInstall" class="btn btn-sm btn-success d-none">Installa</button>
@@ -30,7 +30,7 @@
         <div id="bandR"></div><div id="bandC"></div>
         <div id="cells"></div>
         <div id="selBox"></div>
-        <input id="editor" autocomplete="off" spellcheck="false" aria-label="Modifica cella">
+        <input id="editor" maxlength="1" inputmode="numeric" autocomplete="off" spellcheck="false" aria-label="Modifica cella">
       </div>
     </div>
   </div>

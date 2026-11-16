@@ -72,7 +72,10 @@ function endEdit(save, dr = 0, dc = 0) {
   if (save) apply(sel.r, sel.c, ed.value);
   move(dr, dc); vp.focus({ preventScroll: true });
 }
-ed.addEventListener('input', () => fb.value = ed.value);
+// una sola cifra (0-9): scarta tutto il resto, anche con incolla
+const onlyDigit = el => { el.value = el.value.replace(/\D/g, '').slice(0, 1); };
+ed.addEventListener('input', () => { onlyDigit(ed); fb.value = ed.value; });
+fb.addEventListener('input', () => onlyDigit(fb));
 ed.addEventListener('blur', () => endEdit(true));
 ed.addEventListener('keydown', e => {
   if (e.key === 'Enter') { e.preventDefault(); endEdit(true, e.shiftKey ? -1 : 1, 0); }
@@ -91,7 +94,7 @@ vp.addEventListener('keydown', e => {
   else if (k === 'Enter') move(e.shiftKey ? -1 : 1, 0);
   else if (k === 'Delete' || k === 'Backspace') apply(sel.r, sel.c, '');
   else if (k === 'F2') startEdit();
-  else if (k.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) { startEdit(k); }
+  else if (/^\d$/.test(k) && !e.ctrlKey && !e.metaKey && !e.altKey) { startEdit(k); }
   else return;
   e.preventDefault();
 });
